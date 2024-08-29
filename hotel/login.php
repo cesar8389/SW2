@@ -7,8 +7,8 @@ if(isset($_POST['usuario-text']) || isset($_POST['senha-text'])){
     } else if(strlen($_POST['senha-text']) == 0) {
         echo "Preencha a sua senha";
     } else {
-        $usuario = $_POST['usuario-text'];
-        $senha = $_POST['senha-text'];
+        $usuario = $conn->real_escape_string($_POST['usuario-text']);
+        $senha = $conn->real_escape_string($_POST['senha-text']);
 
         $sql = "SELECT usuario, senha FROM usuarios 
         WHERE usuario = '$usuario' AND senha = '$senha'";
