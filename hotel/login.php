@@ -15,7 +15,7 @@ if(isset($_POST['usuario-text']) || isset($_POST['senha-text'])){
         $result = $conn->query($sql);
 
         if($result->num_rows == 1) {
-            echo "Bem vindo";
+            header("Location: consulta_cliente.php");
         } else {
             echo "Usuario/senha incorretos";
         }

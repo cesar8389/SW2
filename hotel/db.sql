@@ -1,7 +1,20 @@
+create database hotel;
 use hotel;
-CREATE TABLE clientes (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(50) NOT NULL,
-email VARCHAR(30) NOT NULL,
-cpf VARCHAR(11) NOT NULL,
-datanascimento DATE NOT NULL);
+create table usuarios (
+id INT auto_increment primary key,
+usuario varchar(20) not null,
+senha varchar(20) not null);
+
+insert into usuarios (usuario, senha)
+values ('cesar','1234');
+
+use hotel;
+create table clientes (
+id INT auto_increment primary key,
+nome varchar(50) not null,
+email varchar(30) not null,
+telefone varchar(11) not null,
+cpf varchar(11) not null,
+datanascimento date not null);
+
+select * from clientes;
