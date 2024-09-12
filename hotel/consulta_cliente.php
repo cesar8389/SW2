@@ -44,30 +44,34 @@ $result = $conn->query($sql);
                 <th>Telefone</th>
                 <th>CPF</th>
                 <th>Data de Nascimento</th>
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody>
             <?php while ($row = $result->fetch_assoc()): ?>
-            <tr>
-                <td>
-                    <?php echo $row['id']?>
-                </td>
-                <td>
-                    <?php echo $row['nome']?>
-                </td>
-                <td>
-                    <?php echo $row['email']?>
-                </td>
-                <td>
-                    <?php echo $row['telefone']?>
-                </td>
-                <td>
-                    <?php echo $row['cpf']?>
-                </td>
-                <td>
-                    <?php echo $row['datanascimento']?>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <?php echo $row['id'] ?>
+                    </td>
+                    <td>
+                        <?php echo $row['nome'] ?>
+                    </td>
+                    <td>
+                        <?php echo $row['email'] ?>
+                    </td>
+                    <td>
+                        <?php echo $row['telefone'] ?>
+                    </td>
+                    <td>
+                        <?php echo $row['cpf'] ?>
+                    </td>
+                    <td>
+                        <?php echo $row['datanascimento'] ?>
+                    </td>
+                    <td>
+                        <a href='editar_cliente.php?id=<?php echo $row['id'] ?>'>Editar</a>
+                    </td>
+                </tr>
             <?php endwhile; ?>
         </tbody>
     </table>
